@@ -44,10 +44,10 @@
             <a href="#项目经历">项目经历</a>
           </li>
           <li>
-            <a href="#">技能证书</a>
+            <a href="#技能证书">技能证书</a>
           </li>
           <li>
-            <a href="#">自我评价</a>
+            <a href="#自我评价">自我评价</a>
           </li>
         </ul>
       </div>
@@ -291,8 +291,8 @@
       <div style="background-color:white;text-align: left">
         <ul  >
           <li style="padding-left: 200px;padding-right: 200px; line-height: 1.6;font-size:18px;">
-            <p style="text-indent: 2em;padding-top: 10px;">c、工艺设计（基于流程模拟）</p>
-            <p style="text-indent: 2em;">a）模型建立：包括描述气体在吸附器内流动的三传方程、边界条件以及辅助设备（包括泵、缓冲罐、阀门、管路等）模型。
+            <p style="text-indent: 2em;padding-top: 10px;">c、工艺设计（基于<span style="color: red">流程模拟</span>）</p>
+            <p style="text-indent: 2em;padding-left: 40px;">a）<span style="color: blue">模型建立</span>：包括描述气体在吸附器内流动的三传方程、边界条件以及辅助设备模型。
               最终得到一组关于时间、空间的偏微分代数方程组。模型方程的建立过程如下（以组分质量守恒方程为例）：</p>
           </li>
           </ul>
@@ -304,22 +304,23 @@
             <div style="background-color:white;text-align: left">
         <ul  >
           <li style="padding-left: 200px;padding-right: 200px; line-height: 1.6;font-size:18px;">
-            <p style="text-indent: 2em;">b）模型求解：在gPROMS软件中通过自编程的形式搭建上述工艺流程，采用有限元正交配置法
+            <p style="text-indent: 2em;padding-left: 40px;">b）<span style="color: blue">模型求解</span>：在gPROMS软件中通过<span style="color: blue">自编程</span>的形式搭建上述工艺流程，采用有限元正交配置法
 （Orthogonal collocation on finite elements method, OCFEM）对吸附器径向空间域进行离散，得到关于时间的一阶常微分代数方程组，而后对时间做积分运算。
 基于模拟结果，打余量后，得到初步工艺方案。 </p>
           </li>
           </ul>
           <div style="background-color:white;text-align: center">
-            <img src="./picture/zibiancheng.png" width="500px" height="300px" alt="加载失败" style="text-align: center"/>
+            <img src="./picture/zibiancheng.png" width="400px" height="250px" alt="加载失败" style="text-align: center"/>
+            <img src="./picture/radialdata.png" width="150px" height="250px" alt="加载失败" style="text-align: center"/>
       </div>
       <div style="background-color:white;text-align: left">
         <ul  >
           <li style="padding-left: 200px;padding-right: 200px; line-height: 1.6;font-size:18px;">
-            <p style="text-indent: 2em;padding-top: 10px;">d、结构设计（基于流场模拟）</p>
-            <p style="text-indent: 2em;">必要性：流程模拟时为保证计算速度，在建模过程中假设吸附器内部各物理量不存在轴向浓度梯度
-              （即，建立的是带径向扩散的一维径向流模型）。然而吸附器结构，如气体分布器、内外流道体积等均会对流场带来影响。从而影响吸附器的制氧性能。</p>
-            <p style="text-indent: 2em;">模拟方案：采用Fluent多孔介质模型，并通过用户自定义函数（UDF）添加吸附过程带来的质量与热量源项。
-              通过Journal文件实现边界条件的自动切换，得到不同结构下各步骤塔内流场分布。优化结构，实现吸附剂利用率与建设成本间的权衡。
+            <p style="text-indent: 2em;padding-top: 10px;">d、结构设计（基于<span style="color: red">CFD计算</span>）</p>
+            <p style="text-indent: 2em;">流程模拟时为保证计算速度，在建模过程中假设吸附器内部各物理量不存在轴向浓度梯度
+            。然而吸附器结构，如气体分布器、内外流道体积等均会对流场带来影响。</p>
+            <p style="text-indent: 2em;">为保证计算的准确性，并指导吸附器结构设计。采用Fluent多孔介质模型，并通过用户自定义函数（UDF）
+              添加吸附过程带来的质量与热量源项。 通过Journal文件实现边界条件的自动切换，得到不同结构下各步骤塔内流场分布。优化结构，以实现吸附器内气体均布效果提升。
             </p>
           </li>
           </ul>
@@ -339,19 +340,16 @@
       <div style="background-color:white;text-align: left">
         <ul  >
           <li style="padding-left: 200px;padding-right: 200px; line-height: 1.6;font-size:18px;">
-            <p style="text-indent: 2em;padding-top: 10px;">测评目的：评价低碳院自制的硅胶与碳分子筛共两批吸附剂的捕碳性能。一款好的吸附剂应“<span style="color: red">吸得多、跑得快、价格低、强度高</span>”。
+            <p style="text-indent: 2em;padding-top: 10px;">测评目的：评价低碳院自制的硅胶与碳分子筛共两批吸附剂在近实际工况下的捕碳性能。一款好的吸附剂应“<span style="color: red">吸得多、跑得快、价格低、强度高</span>”。
             </p>
             <p style="text-indent: 2em;">热力学性能：采用静态容积法测定吸附剂在工作温度、压力区间下的饱和吸附容量。该实验的误差主要来源于压力、温度传感器的测量误差以及气体压缩带来的计算误差。</p>
           </li>
           </ul>
        </div>
-      <div class="./picture/image-container" style="  text-align: center;background-color: white;">
-        <img src="./picture/jingtaixifu.png" width="400px" height="200px" alt="加载失败";/>
-      </div>
             <div style="background-color:white;text-align: left">
         <ul  >
           <li style="padding-left: 200px;padding-right: 200px; line-height: 1.6;font-size:18px;">
-            <p style="text-indent: 2em;padding-top: 10px;">动力学性能：采用实验室自建的小试装置，测定其在实际工况下的捕碳性能并进行参数校正。</p>
+            <p style="text-indent: 2em;">动力学性能：采用实验室自建的小试装置，测定其在实际工况下的捕碳性能并进行参数校正。</p>
           </li>
           </ul>
        </div>
@@ -364,16 +362,16 @@
         <ul  >
           <li style="padding-left: 200px;padding-right: 200px; line-height: 1.6;font-size:18px;">
             <p style="text-indent: 2em;padding-top: 10px;">流程模拟：在商业软件Aspen adsorption中搭建上述流程，采用测定的热力学、动力学数据，探寻最佳工艺条件。
-              得到床层内CO2的时空分布，为后续吸附剂的改进提供数据支持。
+              得到床层内各组分的时空分布，为后续吸附剂的改进提供数据支持。
             </p>
           </li>
           </ul>
        </div>
-      <div class="image-container" style="  text-align: center;background-color: white;">
-        <img src="./picture/shixu.png" width="600px" height="120px" alt="加载失败";/>
-      </div>
        <div class="image-container" style="  text-align: center;background-color: white;">
-        <img src="./picture/erjie.png" width="700px" height="220px" alt="加载失败";/>
+        <img src="./picture/erjie.png" width="600px" height="200px" alt="加载失败";/>
+      </div>
+      <div class="image-container" style="  text-align: center;background-color: white;padding-top: 5px;">
+        <img src="./picture/erjiedata.png" width="600px" height="170px" alt="加载失败";/>
       </div>
       <ul  style="background-color:white">
           <li style="text-align: center;padding-left: 200px;padding-right: 200px;padding-top: 20px; line-height: 1.6;font-size:18px">
@@ -392,10 +390,55 @@
             </p>
           </li>
           </ul>
-       </div>
+      </div>
         <div class="image-container" style="  text-align: center;background-color: white;">
         <img src="./picture/zhiqing.png" width="500px" height="250px" alt="加载失败";/>
       </div>
+      <div class="banner-top" style="background-color:white">
+        <div class="text-wrapper" >
+          <div class="Line"></div>
+          <a name="技能证书">
+          <p>技能证书</p></a>
+          <div class="Line"></div>
+        </div>
+         <div style="background-color: white; padding: 10px;">
+        <table >
+          <thead>
+            <tr>
+              <th>序号</th>
+              <th>名称</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>01</td>
+              <td>大学英语六级（CET-6）</td>
+            </tr>
+            <tr>
+              <td>03</td>
+              <td>全国大学生数学建模竞赛省级一等奖</td>
+            </tr>
+            <tr>
+              <td>03</td>
+              <td>全国首届化工AI大赛创新先锋奖</td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+        <div class="banner-top" style="background-color:white">
+        <div class="text-wrapper" >
+          <div class="Line"></div>
+          <a name="自我评价">
+          <p>自我评价</p></a>
+          <div class="Line"></div>
+        </div>
+        <div style="background-color:white;text-align:center">
+        <ul  >
+          <li style="padding-left: 200px;padding-right: 200px;padding-bottom: 200px; line-height: 1.6;font-size:18px;">
+            <p style="text-indent: 2em;padding-top: 10px;">路漫漫其修远兮，吾将上下而求索！
+            </p>
+          </li>
+          </ul>
       <div class="banner-top" style="background-color:rgba(0, 219, 10, 0.582)">
         <div class="text-wrapper" >
           <div class="Line"></div>
